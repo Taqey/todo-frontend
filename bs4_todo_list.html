@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ToDo List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-4 bg-light sidebar p-3">
+
+      <!-- All Items Collapsible -->
+      <div class="all-items-section mb-3">
+        <div class="collapse-header" data-toggle="collapse" data-target="#allItemsContent">
+          All Items
+          <span class="toggle-icon">▼</span>
+        </div>
+        <div id="allItemsContent" class="collapse show">
+          <button class="btn btn-success btn-sm show-add-item-btn mb-2">Add</button>
+
+          <!-- Add Item Form -->
+          <div class="add-item-form mb-2 d-none">
+            <input type="text" class="form-control mb-1 add-task" placeholder="New Item Name">
+            <input type="text" class="form-control mb-1 add-task-desc" placeholder="Description">
+<button type="button" class="btn btn-primary btn-sm save-new-item-btn">Save</button>
+            <button type="button" class="btn btn-secondary btn-sm cancel-item-btn">Cancel</button>
+          </div>
+
+          <ul class="list-group all-items-list mb-3"></ul>
+        </div>
+      </div>
+
+      <!-- Lists Collapsible -->
+      <div class="lists-section">
+        <div class="collapse-header" data-toggle="collapse" data-target="#listsContent">
+          Lists
+          <span class="toggle-icon">▼</span>
+        </div>
+        <div id="listsContent" class="collapse show">
+          <button class="btn btn-success btn-sm show-add-list-btn mb-2">Add</button>
+
+          <!-- Add List Form -->
+          <div class="add-list-form mb-2 d-none">
+            <input type="text" class="form-control mb-1 add-list-name" placeholder="List Name">
+            <input type="text" class="form-control mb-1 add-list-desc" placeholder="Description">
+            <button class="btn btn-success btn-sm save-list-btn">Save</button>
+            <button class="btn btn-secondary btn-sm cancel-list-btn">Cancel</button>
+          </div>
+
+          <ul class="list-group list-of-lists mb-3"></ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Main Tasks Area -->
+    <div class="col-md-8">
+      <div class="card card-white">
+        <div class="card-body">
+          <h5>Tasks of Selected List</h5>
+          <ul class="nav nav-pills todo-nav mb-3">
+            <li class="nav-item"><a href="#" class="nav-link active">All</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Active</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Completed</a></li>
+          </ul>
+          <div class="todo-list"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Item Modal -->
+<div class="modal fade" id="editItemModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content p-3">
+      <h5>Edit Item</h5>
+      <input type="text" class="form-control mb-2 edit-item-name" placeholder="Item Name">
+      <input type="text" class="form-control mb-2 edit-item-desc" placeholder="Description">
+      <button class="btn btn-success save-item-btn">Save</button>
+      <button class="btn btn-secondary close-item-btn" data-bs-dismiss="modal">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

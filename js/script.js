@@ -1,7 +1,7 @@
 $(document).ready(function () {
   "use strict";
 
-  const baseUrl = "https://localhost:7131/api";
+const baseUrl = "https://todolist73.runasp.net/api";
 
   let lists = [];
   let allItems = [];
